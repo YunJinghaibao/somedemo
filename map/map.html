@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>map</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4],
+            str = '小海豹';
+        Array.prototype.myMap = function (fn) {
+            var arr = [];
+            for (var i = 0; i < this.length; i++) {
+                var n = fn(this[i], i,this);
+                arr.push(n);
+            }
+            return arr;
+        }
+        var nArr = arr.myMap(function(item,index,Array){
+            if(item > 2){
+                return '1';
+            }else{
+                return '2';
+            }
+        })
+        var myMap = Array.prototype.myMap;
+        var nStr = myMap.call(str,function(item,index,Array){
+            return item.charCodeAt(0);
+        })
+        console.log(nArr); //["2", "2", "1", "1"]
+        console.log(nStr); //[23567, 28023, 35961]
+    </script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html,body{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.wrapper .nav{
+    position: relative;
+    width: 100%;
+    height: 30px;
+}
+.wrapper .nav .box{
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: 0;
+    padding: 0 96px 0 0;
+    margin: 19px 0 5px;
+}
+.wrapper .nav ul li{
+    display: inline-block;
+    margin-left: 20px;
+    line-height: 24px; 
+}
+.wrapper .nav ul li.log a,
+.wrapper .nav ul li.setting a{
+    display: block;
+    font-weight: normal;
+}
+.wrapper .nav ul li.setting{
+    position: relative;
+}
+.wrapper .nav ul li.setting .set{
+    position: absolute;
+    display: block;
+    width: 70px;
+    border: 1px solid #d1d1d1;
+    margin-top: 2px; 
+    margin-left: -24px;
+    display: none;
+}
+.wrapper .nav ul li.setting .set::before{
+    display: block;
+    content: '';
+    position: absolute;
+    border-bottom: 6px solid #e7e7e7;
+    border-left: 6px solid transparent;
+    border-top: 6px solid transparent;
+    border-right: 6px solid transparent;
+    left: 50%;
+    margin-left: -3px; 
+    top: -12px;
+}
+.wrapper .nav ul li.setting .set a{
+    display: block;
+    text-align: left;
+    line-height: 26px;
+    background: #fff;
+    color: #333;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 0 9px;
+    margin: 0!important;
+}
+.wrapper .nav ul li.setting .set a:hover{
+    background: #3385ff;
+    color: #fff;
+}
+.wrapper .nav ul li a{
+    color: #333;
+    font-size: 13px;
+    font-weight: 700;
+}
+.wrapper .nav ul li a:hover{
+    color: #00c;
+}
+.wrapper .nav .more{
+    position: absolute;
+    text-decoration: none;
+    right: 10px;
+    top: 0;
+    margin: 19px 0 5px;
+}
+.wrapper .nav .more .more_p{
+    display: inline-block;
+    color: #fff;
+    background: #38f;
+    font-size: 13px;
+    line-height: 24px;
+    padding: 1px 3px 1px 3px;
+}
+.wrapper .nav .more_m{
+    position: absolute;
+    width: 85px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    border-left: 1px solid #e7e7e7;
+    text-align: center;
+    background-color: #f9f9f9; 
+    display: none;
+}
+.wrapper .nav .more_m a{
+    text-decoration: none;    
+}
+.wrapper .nav .more_m div.fir{
+    width: 66px;
+    height: 43px;
+    font-size: 13px;
+    line-height: 43px;
+    padding-top: 9px;
+    margin: 0 auto;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0; 
+    cursor: default;
+}
+.wrapper .nav .more_m .link{
+    font-size: 12px;
+}
+.wrapper .nav .more_m .link a{
+    display: block;
+    width: 66px;
+    height: 76px;
+    margin: 0 auto;
+    color: #666;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0; 
+    overflow: hidden;
+}
+.wrapper .nav .more_m .link a span{
+    font-size: 12px;
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin: 10px auto 5px;
+    background: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/bdbri_icons_194ae06.png) no-repeat;
+}
+.wrapper .nav .more_m .link a span.nm{
+    background-position: 0 0;
+}
+.wrapper .nav .more_m .link a span.yy{
+    background: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/qqjt_9809ca8.png) no-repeat;
+    background-position: 0 0;
+    background-size: cover; 
+}
+.wrapper .nav .more_m .link a span.tp{
+    background-position: -112px 0;
+}
+.wrapper .nav .more_m .link a span.zd{
+    background-position: -36px 0;
+}
+.wrapper .nav .more_m .link a span.wk{
+    background-position: -148px 0;
+}
+.wrapper .nav .more_m .link a span.fyb{
+    background-position: -184px 0;
+}
+.wrapper .nav .more_m .link .tot{
+    width: 85px;
+    height: 30px;
+    margin-top: 15px;
+    clear: both;
+    text-align: center;
+    overflow: hidden;
+    text-decoration: underline;
+}
+.wrapper .nav .more_m .link a:hover{
+    text-decoration: underline;
+}
+.wrapper .baidu{
+    width: 100%;
+    height: 191px;
+    margin-top: 150px;
+    padding: 30px 0 0 0;
+}
+.wrapper .baidu .bdimg{
+    width: 270px;
+    height: 129px;
+    margin: 0 auto;
+}
+.wrapper .baidu .bdimg img{
+    width: 100%;
+    height: 100%;
+}
+.wrapper .baidu .inp{
+    width: 644px;
+    height: 37px;
+    margin: 20px auto 0;
+    font-size: 0;
+}
+.wrapper .baidu .inp input{
+    outline: none;
+    border: none;
+}
+.wrapper .baidu .inp .text{
+    position: relative;
+    display: inline-block;
+    width: 539px;
+    height: 34px;
+    vertical-align: top;
+    border: 1px solid #b6b6b6;
+    background: #fff;
+    margin-right: 0;
+    border-right-width: 0;
+}
+.wrapper .baidu .inp .text.focus{
+    border: 1px solid blue;
+    border-right: none;
+}
+.wrapper .baidu .inp .text input{
+    width: 500px;
+    height: 22px;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 0;
+    margin: 6px 0 0 7px;
+    background: transparent;
+}
+.wrapper .baidu .inp .text .icon{
+    position: absolute;
+    z-index: 5;
+    display: block;
+    width: 18px;
+    height: 16px;
+    right: 11px;
+    top: 50%;
+    margin-top: -8px;
+    cursor: pointer;
+    background: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_5606e8f.png) no-repeat;
+    background-position: 0 0;
+}
+.wrapper .baidu .inp .text .icon:hover{
+    background-position: 0 -20px;
+}
+.wrapper .baidu .inp .submit{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin-right: 4px;
+}
+.wrapper .baidu .inp .submit input{
+    width: 100px;
+    height: 36px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    line-height: 36px;
+    letter-spacing: 1px;
+    background: #3385ff;
+    border-bottom: 1px solid #2d78f4;
+}
+.wrapper .baidu .inp .submit input:hover{
+    background: #317ef3;
+    border-bottom: 1px solid #2868c8;
+}
+.bdlog{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    opacity: 0.5;
+    display: none;
+}
+.login{
+    position: absolute;
+    z-index: 10;
+    width: 356px;
+    left: 50%;
+    top: 32%;
+    margin-left: -173px;
+    background: #fff;
+    font-size: 14px;
+}
+.login .show{
+    display: none;
+}
+.login .close{
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 16px;
+    top: 12px;
+    right: 16px;
+    cursor: pointer;
+    background: url(https://passport.baidu.com/passApi/img/pass_login_icons.png) no-repeat;
+    background-position: -56px -48px; 
+}
+.login .close:hover{
+    background-position: -72px -48px; 
+}
+.login .login_in{
+    position: relative;
+    width: 356px;
+    padding: 0 18px;
+}
+.login .login_in .title{
+    width: 300px;
+    font-size: 16px;
+    height: 32px;
+    line-height: 46px;
+    color: #000;
+    margin-top: 24px;
+    margin-bottom: 15px;
+    padding-left: 118px;
+    background: url(https://passport.baidu.com/passApi/img/loginlogo.png) left no-repeat;
+}
+.login .login_in .login_input{
+    width: 300px;
+}
+.login .login_in .login_input input{
+    width: 100%;
+    height: 42px;
+    margin-bottom: 16px;
+}
+.login .login_in .login_input .check{
+    width: 300px;
+    height: 42px;
+    font: 400 13.3333px Arial;
+    line-height: 42px;
+    margin-top: -8px;
+}
+.login .login_in .login_input .check #check{
+    width: unset;
+    vertical-align: top;
+}
+.login .login_in .login_input .check label{
+    display: inline;
+}

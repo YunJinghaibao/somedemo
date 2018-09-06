@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>saolei</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .wrapper {
+            background-color: #ccc;
+            width: 100%;
+            height: 1000px;
+            position: relative;
+        }
+        .wrapper .con {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .wrapper .con .mainZone {
+            border: 2px solid black;
+            width: 620px;
+            height: 620px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .wrapper .con .count {
+            font-size: 30px;
+            font-weight: bold;
+            color: blueviolet;
+            text-align: center;
+        }
+        .wrapper .con .mainZone .mainBox {
+            border: 1px solid purple;
+            height: 60px;
+            width: 60px;
+            float: left;
+            background-color: gray;
+        }
+        .wrapper .con .mainZone .red {
+            background: red;
+        }
+        .wrapper .con .mainZone .mark {
+            background: yellow;
+        }
+        .wrapper .con .mainZone .num {
+            color: blueviolet;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 60px;
+            text-align: center;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="con">
+            <div class="mainZone" id="mainZone"></div>
+            <div class="count">
+                剩余雷数：
+                <strong id="restMain">10</strong>
+            </div>
+        </div>
+    </div>
+    <script>
+        var zone = document.getElementById('mainZone');
+        var zoneArr = [];
+        var restMains = 10;
+        var init = function () {
+            for (var i = 0; i < 10; i++) {
+                for (var j = 0; j < 10; j++) {
+                    var allMainbox = document.createElement('div');
+                    allMainbox.classList.add('mainBox');
+                    allMainbox.setAttribute('id', i + '-' + j);
+                    zone.appendChild(allMainbox);
+                    zoneArr.push({ count: 0 });
+                }
+            };
+            var mainNum = 10;
+            var zoneBoxes = document.getElementsByClassName('mainBox');
+            while (mainNum) {
+                var num = Math.floor(Math.random() * 100);
+                if (zoneArr[num].count === 0) {
+                    zoneArr[num].count = 1;
+                    zoneBoxes[num].classList.add('lei');
+                    mainNum--;
+                }
+            };
+        };
+        init();
+        zone.oncontextmenu = function () {
+            return false;
+        }
+        zone.addEventListener('mousedown', function (e) {
+            var event = e || window.event;
+            var target = event.target;
+            var restMain = document.getElementById('restMain');
+            var lei = document.getElementsByClassName('lei');
+            if (event.which == 1) {
+                left(target);
+            } else if (event.which == 3) {
+                right(target);
+            };
+            function left(target) {
+                if (target.classList.contains('lei')) {    //如果点的格子是雷
+                    for (var i = 0; i < lei.length; i++) {
+                        lei[i].classList.add('red');       //给每个是雷的格子加red类，并全部显示red类
+                    }
+                    setTimeout(function () {
+                        alert('点到雷了，游戏结束');         //并触发游戏结束
+                        location.reload();
+                    }, 500);
+                } else {
+                    var a = 0;
+                    var placeArr = target.getAttribute('id').split('-');
+                    var plaX = +placeArr[0];
+                    var plaY = +placeArr[1];
+                    target.classList.add('num');
+                    for (var i = plaX - 1; i <= plaX + 1; i++) {
+                        for (var j = plaY - 1; j <= plaY + 1; j++) {
+                            var nearBoxArr = document.getElementById(i + '-' + j);
+                            if (nearBoxArr && nearBoxArr.classList.contains('lei')) {
+                                a++
+                            }
+                        }
+                    };
+                    if(a == 0){
+                        target.innerHTML = '';
+                    }else {
+                        target.innerHTML = a;
+                    }
+                    if (a == 0) {
+                        for (var i = plaX - 1; i <= plaX + 1; i++) {
+                            for (var j = plaY - 1; j <= plaY + 1; j++) {
+                                var boxArr = document.getElementById(i + '-' + j);
+                                if (boxArr && boxArr.lenth != 0) {
+                                    if (!boxArr.classList.contains('pick')) {
+                                        boxArr.classList.add('pick');
+                                        left(boxArr);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            function right(target) {
+                target.classList.toggle('mark');
+                if (target.classList.contains('lei') && target.classList.contains('mark')) {
+                    restMains--;
+                };
+                if (target.classList.contains('lei') && !target.classList.contains('mark')) {
+                    restMains++;
+                };
+                restMain.innerHTML = restMains;
+                if (restMains === 0) {
+                    setTimeout(function () {
+                        alert('恭喜你，雷全部被选出来了！！');
+                        location.reload();
+                    }, 500);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

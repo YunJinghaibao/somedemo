@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百度登陆界面</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            <ul class="box">
+                <li><a href="#">新闻</a></li>
+                <li><a href="#">hao123</a></li>
+                <li><a href="#">地图</a></li>
+                <li><a href="#">视频</a></li>
+                <li><a href="#">贴吧</a></li>
+                <li><a href="#">学术</a></li>
+                <li class="log"><a href="https://www.baidu.com">登陆</a></li>
+                <li class="setting">
+                    <a href="#">设置</a>
+                    <div class="set">
+                        <a href="#">搜索设置</a>
+                        <a href="#">高级搜索</a>
+                        <a href="#">关闭预测</a>
+                        <a href="#">隐私设置</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="more">
+                <span class="more_p">更多产品</span>
+            </div>
+            <div class="more_m">
+                <div class="fir">更多产品</div>
+                <div class="link">
+                    <a href="#"><span class="nm"></span>糯米</a>
+                    <a href="#"><span class="yy"></span>音乐</a>
+                    <a href="#"><span class="tp"></span>图片</a>
+                    <a href="#"><span class="zd"></span>知道</a>
+                    <a href="#"><span class="wk"></span>文库</a>
+                    <a href="#"><span class="fyb"></span>风云榜</a>
+                    <div class="tot">
+                        <a href="#">全部产品>></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="baidu">
+            <div class="bdimg">
+                <a href="#"><img src="https://www.baidu.com/img/bd_logo1.png" alt=""></a>
+            </div>
+            <div class="inp">
+                <span class="text">
+                    <input type="text" id="inp">  
+                    <span class="icon"></span>
+                </span>
+                <span class="submit">
+                    <input type="submit" value="百度一下">
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="bdlog"></div>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $('.log').on('click',function(e){
+            e.preventDefault();
+            if(!$('body').children().hasClass('login')){
+                var html = $(`<div class="login">
+                                <span class="close"></span>
+                                <div class="login_in">
+                                    <div class="title">
+                                        用户名密码登陆
+                                    </div>
+                                    <div class="login_input">
+                                        <input type="text" placeholder="手机/邮箱/用户名">
+                                        <input type="password" placeholder="密码">
+                                        <div class="check">
+                                            <input type="checkbox" checked id="check">
+                                            <label for="check">下次自动登陆</label>
+                                        </div>
+                                        <input type="submit" value="登陆">
+                                    </div>
+                                    <div class="forget">
+                                        <a href="#">忘记密码？</a>
+                                        <a href="#">短信快捷登陆</a>
+                                    </div>
+                                </div>
+                            </div>`)
+                $('body').append(html);
+                $('.bdlog').css('display','block');
+            }else{
+                $('.bdlog').css('display','block');
+                $('.login').css('display','block');
+            }
+            // else{
+            //     $('.login').removeClass('show');
+            // }
+            $('.login .close').on('click',function(){
+                console.log(000)
+                $('.login').css('display','none')
+                $('.bdlog').css('display','none');
+             })
+        })
+        $('#inp').on('focus',function(){
+            $('.text').addClass('focus');
+        })
+        $('#inp').on('blur',function(){
+            $('.text').removeClass('focus');
+        })
+        $('.setting').hover(function(){
+            $('.set').css('display','block');
+        },function(){
+            $('.set').css('display','none');
+        })
+        $('.more_p').on('mouseenter',function(){
+            $(this).css('display','none');
+            $('.more_m').css('display','block').on('mouseleave',function(){
+                $(this).css('display','none');
+                $('.more_p').css('display','block');
+            });
+        })
+    </script>
+</body>
+</html>

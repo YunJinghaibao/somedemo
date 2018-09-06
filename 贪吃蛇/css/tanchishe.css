@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #555;
+}
+.wrapper .gameArea{
+    position: absolute;
+    width: 800px;
+    height: 600px;
+    border: 2px solid #6c6c6c;
+    top: 100px;
+    left: 50%;
+    margin-left: -400px;
+}
+/* gameBox */
+.wrapper .gameArea .gameBox{
+    position: relative;
+    width: 600px;
+    height: 600px;
+}/* gameBox */
+
+/* gameBox alertBox */
+.wrapper .gameArea .gameBox .alertBox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: none;
+}
+.wrapper .gameArea .gameBox .alertBox .content{
+    position: absolute;
+    width: 200px;
+    height: 160px;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -80px;
+    background: #fff;
+    border-radius: 20px;
+    text-align: center;
+}
+.wrapper .gameArea .gameBox .alertBox .content p{
+    font-size: 40px;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+.wrapper .gameArea .gameBox .alertBox .content span{
+    font-size: 20px;
+    font-weight: 600;
+}/* gameBox alertBox */
+
+.wrapper .gameArea .gameBox ul .pan{
+    float: left;
+    background: #31cefd;
+    display: block;
+    height: 18px;
+    width: 18px;
+    border: 1px solid #71dcfd;    
+}
+/* gameBox snake */
+.wrapper .gameArea .gameBox .snake{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+.wrapper .gameArea .gameBox .head{
+    background: #061600
+}
+.wrapper .gameArea .gameBox .body{
+    background: #163d08
+}/* gameBox snake */
+
+/* food */
+.wrapper .gameArea .gameBox .food{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgb(248, 102, 66);
+}/* food */
+
+/* gameBox gameFn */
+.wrapper .gameArea .gameFn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 198px;
+    height: 600px;
+    border-left: 2px solid #6c6c6c;
+}
+.wrapper .gameArea .gameFn .btnBox{
+    width: 120px;
+    margin: 20px auto;
+}
+.wrapper .gameArea .gameFn .btnBox .btn{
+    width: 120px;
+    height: 30px;
+    margin-bottom: 10px; 
+    color: #0c0c0c;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.wrapper .gameArea .gameFn .btnBox .btn:hover{
+    background: #f40;
+    color: #fff;
+}
+.wrapper .gameArea .gameFn .scoreBox{
+    width: 120px;
+    margin: 20px auto;
+    text-align: center;
+    color: #f40abc;
+    font-size: 25px;
+    font-weight: 600;
+}
+.wrapper .gameArea .gameFn .scoreBox .score{
+    display: inline-block;
+    border: 1px solid black;
+    background: #fff;
+    color: black;
+    width: 100px;
+    height: 60px;
+    line-height: 60px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.wrapper .gameArea .gameFn .speedBox{
+    width: 120px;
+    margin: 20px auto;
+    text-align: center;
+    color: #f40abc;
+    font-size: 25px;
+    font-weight: 600;
+}
+.wrapper .gameArea .gameFn .speedBox .speed{
+    display: inline-block;
+    border: 1px solid black;
+    background: #fff;
+    color: black;
+    width: 100px;
+    height: 60px;
+    line-height: 60px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.wrapper .gameArea .gameFn .help{
+    width: 140px;
+    margin: 40px auto 0;
+    font-size: 12px;
+}
+.wrapper .gameArea .gameFn .help span{
+    display: inline-block;
+    margin-top: 5px;
+    color: #33ef00; 
+} /* gameBox gameFn */ 

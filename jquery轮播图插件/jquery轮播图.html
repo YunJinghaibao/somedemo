@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery轮播图</title>
+    <link rel="stylesheet" href="demo.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            position: relative;
+            width: 900px;
+            height: 700px;
+            margin: 100px auto;
+            border: 3px solid orange;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap" id="wrap"></div>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="broadcastPics.js"></script>
+    <script>
+        $('#wrap').broadcastPics({
+            image:['./img/1.jpg','./img/2.jpg','./img/3.jpg','./img/4.jpg','./img/5.jpg'],
+            url:['#','#','#','#','#'],//[]
+            alt:['123','haibao','海豹','haibao','海豹'],//[]
+            time: 1200,//default = 2000
+            btn: 'true',//'false' or 'true'
+            list: 'true'//'false' or 'true'
+        })
+    </script>
+</body>
+</html>

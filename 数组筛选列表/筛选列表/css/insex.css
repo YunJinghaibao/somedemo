@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    outline: none;
+}
+.wrapper{
+    width: 100%;
+}
+.wrapper .content{
+    width: 600px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+}
+.wrapper .content .inputText{
+    width: 100%;
+    top: 20px;
+    margin: 30px 10px;
+}
+.wrapper .content .inputText input{
+    border: 2px solid #ddd;
+    height: 36px;
+    width: 320px;
+    font-size: 20px; 
+    border-radius: 10px; 
+}
+.wrapper .content .inputText ul{  
+    float: right;
+}
+.wrapper .content .inputText ul li{
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 20px;
+    color: orange;
+    height: 32px;
+    padding: 2px;
+    line-height: 32px;
+    border:2px solid orange;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.wrapper .content .inputText ul li:hover{
+    border:2px solid #bbb;
+}
+.wrapper .content .inputText ul li.a_sex{
+    background-color: orange;
+    color: white;
+}
+.wrapper .content .detail{
+    width: 100%;
+    margin-top: 30px;
+}
+.wrapper .content .detail li{
+    width: 90%;
+    height: 50px;
+    border: 1px solid #ccc;
+    margin: 30px auto;
+    color: blueviolet;
+    font-size: 20px;
+}
+.wrapper .content .detail li img{
+    width: 48px;
+    height: 48px;
+    border: 1px solid black;
+}
+.wrapper .content .detail li span{
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: top;
+}

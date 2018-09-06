@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery选项卡</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            background-color: #999;
+        }
+
+        .wrapper {
+            width: 400px;
+            margin: 50px auto;
+            border: 3px solid black;
+            border-radius: 10px;
+        }
+
+        .wrapper .con {
+            width: 400px;
+        }
+
+        .wrapper .con div {
+            width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 25px;
+            cursor: pointer;
+            background: #666;
+            border-bottom: 1px solid black;
+        }
+
+        .wrapper .con ul li {
+            width: 400px;
+            height: 40px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 25px;
+            border-bottom: 1px solid black;
+        }
+
+        .wrapper .con ul li.z {
+            border-bottom: none;
+        }
+
+        .def {
+            color: #fff;
+        }
+
+        .color {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="con">
+            <div class="num">壹</div>
+            <ul>
+                <li>html</li>
+                <li>css</li>
+                <li>js</li>
+                <li>jq</li>
+            </ul>
+        </div>
+        <div class="con">
+            <div class="num">贰</div>
+            <ul>
+                <li>html</li>
+                <li>css</li>
+                <li>js</li>
+                <li>jq</li>
+            </ul>
+        </div>
+        <div class="con">
+            <div class="num">叁</div>
+            <ul>
+                <li>html</li>
+                <li>css</li>
+                <li>js</li>
+                <li>jq</li>
+            </ul>
+        </div>
+        <div class="con">
+            <div class="num">肆</div>
+            <ul>
+                <li>html</li>
+                <li>css</li>
+                <li>js</li>
+                <li>jq</li>
+            </ul>
+        </div>
+    </div>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        init();
+        function init() {
+            initHide();
+            $('.num').on('click', jus);
+        }
+        function initHide() {
+            $('li').hide();
+        }
+        function show(it) {
+            $(it).addClass('color');
+            $(it).siblings().children().slideDown('fast');
+        }
+        function hidde(it) {
+            if (!$(it).hasClass('color')) {
+                $('.num').removeClass('color');
+                $('.num').siblings().children().slideUp('fast');
+                show(it);
+            }else{
+                $(it).removeClass('color');
+                $(it).siblings().children().slideUp('fast');
+            }
+        }
+        function jus() {
+            if (!$(this).hasClass('color') && $('.color').length == 0) {
+                show(this);
+            } else{
+                hidde(this);
+            }
+        }
+    </script>
+</body>
+</html>
